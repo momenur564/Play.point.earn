@@ -852,7 +852,7 @@ Contact Us
 /* ================= HISTORY & PAGE SAVE ================= */
 
 let currentPage = null;
-
+function openPage(pageId, addToHistory = true) { if (pages[pageId]) { if(addToHistory) { history.pushState({ page: pageId }, null, ""); } localStorage.setItem("currentPage", pageId); document.getElementById("detailTitle").innerHTML = pages[pageId].title; document.getElementById("headerTitle").innerHTML = pages[pageId].title; document.getElementById("detailContent").innerHTML = pages[pageId].content; currentPage = pageId; window.scrollTo(0, 0); } }
 /* পেজ রিফ্রেশ হলে আগের পেজে থাকার জন্য */
 
 window.addEventListener("load",function(){
